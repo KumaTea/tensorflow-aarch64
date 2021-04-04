@@ -26,6 +26,12 @@ To check all available tags, [click here][4].
 
 ---
 
+## Build
+
+Please check the [tutorial](build).
+
+---
+
 ## More Info
 
 ### Building Environment
@@ -41,7 +47,6 @@ To check all available tags, [click here][4].
 > GCC: v6.3.0
 > 
 > Virtualization: **Docker**
-
 
 [1]: https://github.com/tensorflow/tensorflow
 [2]: https://github.com/KumaTea/ext-whl
