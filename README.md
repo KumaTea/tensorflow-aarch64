@@ -52,6 +52,11 @@ Please check the [tutorial](build).
 > 
 > Virtualization: **Docker**
 
+### Official CI wheels
+
+There are official wheels for Python 3.6 and 3.7,
+you could fetch them [here][9].
+
 [1]: https://github.com/tensorflow/tensorflow
 [2]: https://github.com/KumaTea/ext-whl
 [3]: https://github.com/KumaTea/tensorflow-aarch64/releases
@@ -60,3 +65,4 @@ Please check the [tutorial](build).
 [6]: https://shields.io/badge/manylinux-manylinux__2__24-blue
 [7]: https://github.com/KumaTea/tensorflow-aarch64
 [8]: https://cf.tf.maku.ml
+[9]: https://snapshots.linaro.org/ldcg/python/tensorflow/12/tensorflow_cpu/
