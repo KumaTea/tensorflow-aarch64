@@ -1,7 +1,11 @@
 # tensorflow-aarch64
 
+[![Coverage][5]][3] [![manlinux][6]][3] 
+
 [TensorFlow][1] wheels (whl) and docker images
 for `aarch64` / ARMv8 / ARM64
+
+[GitHub][7] | [Web][8]
 
 ## Install
 
@@ -52,3 +56,7 @@ Please check the [tutorial](build).
 [2]: https://github.com/KumaTea/ext-whl
 [3]: https://github.com/KumaTea/tensorflow-aarch64/releases
 [4]: https://hub.docker.com/r/kumatea/tensorflow
+[5]: https://shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8%20%7C%203.9-blue
+[6]: https://shields.io/badge/manylinux-manylinux__2__24-blue
+[7]: https://github.com/KumaTea/tensorflow-aarch64
+[8]: https://cf.tf.maku.ml
