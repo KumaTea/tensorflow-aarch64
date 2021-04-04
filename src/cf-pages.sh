@@ -2,6 +2,6 @@
 
 set -ex
 
-wget -E -r -k -p "https://torch.maku.ml/"
-cp -rf torch.maku.ml/* .
-rm -rf torch.maku.ml
+wget -E -r -k -p "https://tf.maku.ml/"
+cp -rf tf.maku.ml/* .
+rm -rf tf.maku.ml
