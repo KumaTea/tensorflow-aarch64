@@ -38,6 +38,13 @@ Please check the [tutorial](build).
 
 ## More Info
 
+### `RuntimeError`
+
+If you see `RuntimeError: module compiled against API version 0xe but this version of numpy is 0xd`,
+it is because `tensorflow` requires `numpy~=1.19.2` but I built it using `numpy~=1.20.2`.
+
+You may try `pip install -U numpy`.
+
 ### Building Environment
 
 > Host: Raspberry Pi 4 Model B
