@@ -4,7 +4,7 @@ RUN set -ex \
         \
         && echo "cd /root" >> /root/.bashrc \
         && apt update \
-        && apt install -y ca-certificates \
+        && apt install -y apt-transport-https ca-certificates \
         && cp /etc/apt/sources.list /etc/apt/sources.list.bak \
         && sed -i 's@http://deb.debian.org/debian@https://mirrors.matrix.moe/debian@g' /etc/apt/sources.list \
         && sed -i 's@http://security.debian.org/debian-security@https://mirrors.matrix.moe/debian-security@g' /etc/apt/sources.list \
@@ -17,6 +17,7 @@ RUN set -ex \
         \
         && cd /tmp \
         && wget https://github.com/bazelbuild/bazel/releases/download/3.7.2/bazel-3.7.2-linux-arm64 \
+        && chmod +x /tmp/bazel-3.7.2-linux-arm64 \
         && mv /tmp/bazel-3.7.2-linux-arm64 /usr/bin/bazel \
         && bazel version
 
