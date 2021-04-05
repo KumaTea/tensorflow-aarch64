@@ -23,13 +23,13 @@ RUN set -ex \
 RUN set -ex \
         \
         && /opt/python/cp39-cp39/bin/pip config set global.index-url https://mirrors.matrix.moe/pypi/web/simple \
-        && /opt/python/cp39-cp39/bin/python3.9 -m pip install -U pip setuptools wheel auditwheel \
+        && /opt/python/cp39-cp39/bin/python3.9 -m pip install -U pip setuptools wheel \
         && /opt/python/cp39-cp39/bin/python3.9 -m pip install -U auditwheel numpy keras_preprocessing \
-        && /opt/python/cp38-cp38/bin/python3.8 -m pip install -U pip setuptools wheel auditwheel \
+        && /opt/python/cp38-cp38/bin/python3.8 -m pip install -U pip setuptools wheel \
         && /opt/python/cp38-cp38/bin/python3.8 -m pip install -U auditwheel numpy keras_preprocessing \
-        && /opt/python/cp37-cp37m/bin/python3.7 -m pip install -U pip setuptools wheel auditwheel \
+        && /opt/python/cp37-cp37m/bin/python3.7 -m pip install -U pip setuptools wheel \
         && /opt/python/cp37-cp37m/bin/python3.7 -m pip install -U auditwheel numpy keras_preprocessing \
-        && /opt/python/cp36-cp36m/bin/python3.6 -m pip install -U pip setuptools wheel auditwheel \
+        && /opt/python/cp36-cp36m/bin/python3.6 -m pip install -U pip setuptools wheel \
         && /opt/python/cp36-cp36m/bin/python3.6 -m pip install -U auditwheel numpy keras_preprocessing \
         && rm -rf /root/.cache/* \
         && rm -rf /root/.config/pip
