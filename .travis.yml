@@ -1,0 +1,19 @@
+os: linux
+arch: arm64
+dist: focal
+language: python
+python:
+  - "3.6"
+  - "3.7"
+  - "3.8"
+  - "3.9"
+
+before_install:
+  - bash test/check-arch.sh
+
+install:
+  - python3 -m pip install -U pip setuptools wheel
+#   - pip install tensorflow -f https://tf.maku.ml/whl/stable.html -f https://ext.maku.ml/whl/stable.html
+
+# script:
+#   - bash test/test.sh
