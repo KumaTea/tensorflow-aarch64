@@ -13,7 +13,7 @@ before_install:
 
 install:
   - python3 -m pip install -U pip setuptools wheel
-#   - pip install tensorflow -f https://tf.maku.ml/whl/stable.html -f https://ext.maku.ml/whl/stable.html
+  - pip install tensorflow -f https://tf.maku.ml/whl/stable.html -f https://ext.maku.ml/whl/stable.html
 
-# script:
-#   - bash test/test.sh
+script:
+  - bash test/test.sh

@@ -100,3 +100,7 @@ bazel build --config=noaws --config=nogcp --config=nohdfs --config=nonccl //tens
 ```
 
 ### Optional: Manylinux wheels
+
+```shell
+/opt/python/cp39-cp39/bin/python3 /opt/_internal/tools/bin/auditwheel repair /root/tf/whl/py39/tensorflow-2.4.1-cp39-cp39-linux_aarch64.whl -w /root/tf/ml/whl/
+```
