@@ -1,6 +1,6 @@
 # tensorflow-aarch64
 
-[![Coverage][5]][3] [![manlinux][6]][10] 
+[![Build Status][11]][12] [![Coverage][5]][3] [![manlinux][6]][10] 
 
 [TensorFlow][1] wheels (whl) and docker images
 for `aarch64` / ARMv8 / ARM64
@@ -74,3 +74,5 @@ you could fetch them [here][9].
 [8]: https://cf.tf.maku.ml
 [9]: https://snapshots.linaro.org/ldcg/python/tensorflow/latest/tensorflow_cpu/
 [10]: https://github.com/pypa/manylinux#manylinux_2_24-debian-9-based
+[11]: https://travis-ci.org/KumaTea/tensorflow-aarch64.svg?branch=main
+[12]: https://travis-ci.org/KumaTea/tensorflow-aarch64

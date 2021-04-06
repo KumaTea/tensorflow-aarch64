@@ -35,4 +35,10 @@ RUN set -ex \
         && rm -rf /root/.cache/* \
         && rm -rf /root/.config/pip
 
+COPY custom.bashrc /root/
+
+RUN set -ex \
+        \
+        && cat /root/custom.bashrc >> /root/.bashrc
+
 CMD ["/bin/bash"]
