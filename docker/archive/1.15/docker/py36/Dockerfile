@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.6-slim
 
 RUN set -ex \
         \
@@ -17,7 +17,7 @@ RUN set -ex \
 RUN set -ex \
         \
         && pip config set global.index-url https://mirrors.matrix.moe/pypi/web/simple \
-        && python3 -m pip install -U tensorflow -f https://tf.maku.ml/wheels.html -f https://ext.maku.ml/wheels.html \
+        && python3 -m pip install tensorflow~=1.15.5 -f https://tf.maku.ml/wheels.html -f https://ext.maku.ml/wheels.html \
         && rm -rf /root/.cache/* \
         && rm -rf /root/.config/pip
 
