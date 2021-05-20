@@ -7,16 +7,24 @@ for `aarch64` / ARMv8 / ARM64
 
 [GitHub][7] | [Web][8]
 
+### Note
+
+Custom build on v2.5.0 [always failed][13],
+so from now on this project has switched to [linaro's build][9],
+which might be more stable.
+
+You can still fetch the archived wheels [here](whl/archive.html).
+
 ## Install
 
-**`pip install tensorflow -f https://tf.maku.ml/whl/stable.html`**
+**`pip install tensorflow -f https://tf.kmtea.eu/whl/stable.html`**
 
-Backup link: `pip install torch -f https://cf.tf.maku.ml/whl/stable.html`
+Backup link: `pip install torch -f https://cf.tf.kmtea.eu/whl/stable.html`
 
 If you want prebuilt wheels of dependencies, such as `grpcio` and `h5py`,
 please add [ext-whl][2] as another index:
 
-`pip install tensorflow -f https://tf.maku.ml/whl/stable.html -f https://ext.maku.ml/whl/stable.html`
+`pip install tensorflow -f https://tf.kmtea.eu/whl/stable.html -f https://ext.kmtea.eu/whl/stable.html`
 
 To pick the `whl` files manually, please check the **[releases][3]**.
 
@@ -61,7 +69,7 @@ You may try `pip install -U numpy`.
 
 ### Official CI wheels
 
-There are official wheels for Python 3.6 and 3.7,
+There are official wheels for Python 3.6 - 3.9,
 you could fetch them [here][9].
 
 [1]: https://github.com/tensorflow/tensorflow
@@ -69,10 +77,11 @@ you could fetch them [here][9].
 [3]: https://github.com/KumaTea/tensorflow-aarch64/releases
 [4]: https://hub.docker.com/r/kumatea/tensorflow
 [5]: https://shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8%20%7C%203.9-blue
-[6]: https://shields.io/badge/manylinux-2__24-blue
+[6]: https://shields.io/badge/manylinux-2014-blue
 [7]: https://github.com/KumaTea/tensorflow-aarch64
-[8]: https://cf.tf.maku.ml
-[9]: https://snapshots.linaro.org/ldcg/python/tensorflow/latest/tensorflow_cpu/
+[8]: https://cf.tf.kmtea.eu
+[9]: https://snapshots.linaro.org/ldcg/python/tensorflow-manylinux/latest/tensorflow_cpu/
 [10]: https://github.com/pypa/manylinux#manylinux_2_24-debian-9-based
 [11]: https://travis-ci.org/KumaTea/tensorflow-aarch64.svg?branch=main
 [12]: https://travis-ci.org/KumaTea/tensorflow-aarch64
+[13]: https://github.com/tensorflow/tensorflow/issues/49209

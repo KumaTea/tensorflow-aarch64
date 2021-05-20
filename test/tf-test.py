@@ -2,6 +2,10 @@
 
 import tensorflow as tf
 
+print('TensorFlow version:', tf.__version__)
+if tf.__version__.startswith('1'):
+    tf.compat.v1.enable_eager_execution()
+
 mnist = tf.keras.datasets.mnist
 
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
@@ -25,7 +29,9 @@ model.compile(optimizer='adam',
               loss=loss_fn,
               metrics=['accuracy'])
 
-model.fit(x_train, y_train, epochs=1)
+model.fit(x_train, y_train, epochs=5)
+
+model.evaluate(x_test,  y_test, verbose=2)
 
 probability_model = tf.keras.Sequential([
   model,
