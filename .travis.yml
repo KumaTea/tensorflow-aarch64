@@ -13,7 +13,7 @@ before_install:
 
 install:
   - python3 -m pip install -U pip setuptools wheel
-  - pip install tensorflow -f https://tf.kmtea.eu/whl/stable.html
+  - pip install tensorflow-cpu -f https://tf.kmtea.eu/whl/stable.html
 
 script:
   - bash test/test.sh

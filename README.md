@@ -17,14 +17,9 @@ You can still fetch the archived wheels [here](whl/archive.html).
 
 ## Install
 
-**`pip install tensorflow -f https://tf.kmtea.eu/whl/stable.html`**
+**`pip install tensorflow-cpu -f https://tf.kmtea.eu/whl/stable.html`**
 
-Backup link: `pip install torch -f https://cf.tf.kmtea.eu/whl/stable.html`
-
-If you want prebuilt wheels of dependencies, such as `grpcio` and `h5py`,
-please add [ext-whl][2] as another index:
-
-`pip install tensorflow -f https://tf.kmtea.eu/whl/stable.html -f https://ext.kmtea.eu/whl/stable.html`
+Backup link: `pip install tensorflow-cpu -f https://cf.tf.kmtea.eu/whl/stable.html`
 
 To pick the `whl` files manually, please check the **[releases][3]**.
 
