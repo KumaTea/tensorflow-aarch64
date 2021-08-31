@@ -78,9 +78,14 @@ def gen_index():
 
     l_list = get_linaro_release()
     l_html = ''
+    l_wheels = []
     for file in l_list:
-        whl_index = '<a href=\"' + file['url'] + '\">' + quote_plus(file['name']) + '</a><br>\n'
-        l_html += whl_index
+        if file['name'] in l_wheels:
+            print('Skipping duplicated', file['name'])
+        else:
+            whl_index = '<a href=\"' + file['url'] + '\">' + quote_plus(file['name']) + '</a><br>\n'
+            l_wheels.append(file['name'])
+            l_html += whl_index
     html += l_html
 
     with open(f'{whl_dir}/{rl_file}', 'w', encoding='utf-8') as html_file:
