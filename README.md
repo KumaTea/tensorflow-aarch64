@@ -7,14 +7,6 @@ for `aarch64` / ARMv8 / ARM64
 
 [GitHub][7] | [Web][8]
 
-### Note on v2.5.0
-
-Custom build on v2.5.0 [always failed][13],
-so this version has switched to [linaro's build][9],
-which might be more stable.
-
-You can still fetch the archived wheels [here](whl/archive.html).
-
 ## Install
 
 **`pip install tensorflow -f https://tf.kmtea.eu/whl/stable.html`**
@@ -44,6 +36,14 @@ Please check the [tutorial](build).
 ---
 
 ## More Info
+
+### Note on v2.5.0
+
+Custom build on v2.5.0 [always failed][13],
+so this version has switched to [linaro's build][9],
+which might be more stable.
+
+You can still fetch the archived wheels [here](whl/archive.html).
 
 ### `RuntimeError`
 
@@ -81,6 +81,6 @@ you could fetch them [here][9].
 [8]: https://cf.tf.kmtea.eu
 [9]: https://snapshots.linaro.org/ldcg/python/tensorflow-manylinux/latest/tensorflow_cpu/
 [10]: https://github.com/pypa/manylinux#manylinux_2_24-debian-9-based
-[11]: https://travis-ci.org/KumaTea/tensorflow-aarch64.svg?branch=main
-[12]: https://travis-ci.org/KumaTea/tensorflow-aarch64
+[11]: https://circleci.com/gh/KumaTea/tensorflow-aarch64.svg?style=svg
+[12]: https://circleci.com/gh/KumaTea/tensorflow-aarch64
 [13]: https://github.com/tensorflow/tensorflow/issues/49209
