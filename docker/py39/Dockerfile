@@ -17,7 +17,7 @@ RUN set -ex \
 RUN set -ex \
         \
         && pip config set global.index-url https://mirrors.matrix.moe/pypi/web/simple \
-        && python3 -m pip install -U tensorflow -f https://tf.maku.ml/wheels.html -f https://ext.maku.ml/wheels.html \
+        && python3 -m pip install -U tensorflow -f https://tf.kmtea.eu/whl/stable.html -f https://ext.kmtea.eu/whl/stable.html \
         && rm -rf /root/.cache/* \
         && rm -rf /root/.config/pip
 
