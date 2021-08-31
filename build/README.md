@@ -91,7 +91,7 @@ root@51899a8bf6e6:~/tf/py38/tensorflow#
 4. Building wheel builder
 
 ```shell
-bazel build --config=noaws --config=nogcp --config=nohdfs --config=nonccl //tensorflow/tools/pip_package:build_pip_package
+BAZEL_LINKLIBS=-l%:libstdc++.a bazel build --config=noaws --config=nogcp --config=nohdfs --config=nonccl //tensorflow/tools/pip_package:build_pip_package
 ```
 
 5. Build the wheel

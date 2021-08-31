@@ -7,19 +7,23 @@ for `aarch64` / ARMv8 / ARM64
 
 [GitHub][7] | [Web][8]
 
-### Note
+### Note on v2.5.0
 
 Custom build on v2.5.0 [always failed][13],
-so from now on this project has switched to [linaro's build][9],
+so this version has switched to [linaro's build][9],
 which might be more stable.
 
 You can still fetch the archived wheels [here](whl/archive.html).
 
 ## Install
 
-**`pip install tensorflow-cpu -f https://tf.kmtea.eu/whl/stable.html`**
+**`pip install tensorflow -f https://tf.kmtea.eu/whl/stable.html`**
 
-Backup link: `pip install tensorflow-cpu -f https://cf.tf.kmtea.eu/whl/stable.html`
+To use linaro's build,
+change `tensorflow` to `tensorflow-aarch64` for newer versions,
+and `tensorflow-cpu` for older versions.
+
+Backup link: `pip install tensorflow -f https://cf.tf.kmtea.eu/whl/stable.html`
 
 To pick the `whl` files manually, please check the **[releases][3]**.
 
@@ -56,9 +60,9 @@ You may try `pip install -U numpy`.
 > 
 > Architecture: ARMv8 / ARM64 / `aarch64`
 > 
-> OS: Debian Stretch
+> OS: CentOS 7
 > 
-> GCC: v6.3.0
+> GCC: v8.3.0
 > 
 > Virtualization: **Docker**
 
