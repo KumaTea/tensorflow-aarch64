@@ -79,8 +79,8 @@ you could fetch them [here][9].
 [6]: https://shields.io/badge/manylinux-2014-blue
 [7]: https://github.com/KumaTea/tensorflow-aarch64
 [8]: https://cf.tf.kmtea.eu
-[9]: https://snapshots.linaro.org/ldcg/python/tensorflow-manylinux/latest/tensorflow_cpu/
-[10]: https://github.com/pypa/manylinux#manylinux_2_24-debian-9-based
+[9]: https://snapshots.linaro.org/ldcg/python/tensorflow-manylinux/latest/tensorflow-aarch64/
+[10]: https://github.com/pypa/manylinux#manylinux2014-centos-7-based
 [11]: https://circleci.com/gh/KumaTea/tensorflow-aarch64.svg?style=svg
 [12]: https://circleci.com/gh/KumaTea/tensorflow-aarch64
 [13]: https://github.com/tensorflow/tensorflow/issues/49209
