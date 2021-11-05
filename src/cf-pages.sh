@@ -2,6 +2,6 @@
 
 set -ex
 
-wget -E -r -k -p "https://tf.kmtea.eu/"
+wget -E -r -k -p --no-check-certificate "https://tf.kmtea.eu/"
 cp -rf tf.kmtea.eu/* .
 rm -rf tf.kmtea.eu
