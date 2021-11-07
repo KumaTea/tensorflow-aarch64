@@ -66,7 +66,7 @@ You may try `pip install -U numpy`.
 > 
 > Virtualization: **Docker**
 
-### Official CI wheels
+### Linaro's wheels
 
 There are official wheels for Python 3.6 - 3.9,
 you could fetch them [here][9].
