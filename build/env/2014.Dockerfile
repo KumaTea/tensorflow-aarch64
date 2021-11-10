@@ -2,10 +2,11 @@ FROM quay.io/pypa/manylinux2014_aarch64
 
 RUN set -ex \
         \
-        && sed -e 's|^mirrorlist=|#mirrorlist=|g' -e 's|^#baseurl=http://mirror.centos.org/altarch/|baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-altarch/|g' -e 's|^#baseurl=http://mirror.centos.org/$contentdir/|baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-altarch/|g' -i.bak /etc/yum.repos.d/CentOS-*.repo
+        && sed -e 's|^mirrorlist=|#mirrorlist=|g' -e 's|^#baseurl=http://mirror.centos.org/altarch/|baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-altarch/|g' -e 's|^#baseurl=http://mirror.centos.org/$contentdir/|baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-altarch/|g' -i.bak /etc/yum.repos.d/CentOS-*.repo \
+        && sed -e 's|^#baseurl=http://mirror.centos.org/centos/7/sclo/$basearch/rh/|baseurl=http://mirrors.tuna.tsinghua.edu.cn/centos-altarch/7/sclo/$basearch/rh/|g' -i.bak /etc/yum.repos.d/CentOS-SCLo-scl-rh.repo \
         && yum install -y dnf \
         && dnf install -y epel-release \
-        && sed -e 's!^metalink=!#metalink=!g' -e 's!^#baseurl=!baseurl=!g' -e 's!//download\.fedoraproject\.org/pub!//mirrors.tuna.tsinghua.edu.cn!g' -e 's!http://mirrors!https://mirrors!g' -i /etc/yum.repos.d/epel.repo /etc/yum.repos.d/epel-testing.repo
+        && sed -e 's!^metalink=!#metalink=!g' -e 's!^#baseurl=!baseurl=!g' -e 's!//download\.fedoraproject\.org/pub!//mirrors.tuna.tsinghua.edu.cn!g' -e 's!http://mirrors!https://mirrors!g' -i /etc/yum.repos.d/epel.repo /etc/yum.repos.d/epel-testing.repo \
         && dnf install -y automake autoconf clang curl wget nano git xz zlib-devel pkgconfig zip unzip libtool swig java-1.8.0-openjdk-devel centos-release-scl devtoolset-8 \
         && dnf clean all \
         && yum clean all \

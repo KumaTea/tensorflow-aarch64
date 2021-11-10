@@ -20,7 +20,7 @@ bash test/check-arch.sh
 PKGS="tensorflow"
 
 $PYVER -m pip install -Uq pip setuptools wheel
-$PYVER -m pip install -q cffi dataclasses future numpy pillow pyyaml requests six typing_extensions tqdm
+$PYVER -m pip install -q cffi dataclasses future numpy pillow pyyaml requests six typing_extensions tqdm -f https://ext.kmtea.eu/whl/stable.html
 $PYVER -m pip install -Uq $PKGS -f https://tf.kmtea.eu/whl/stable.html -f https://ext.kmtea.eu/whl/stable.html
 
 $PYVER test/tf-test.py

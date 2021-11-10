@@ -18,7 +18,7 @@ unless you are using a Ramdisk.
 
 ## Building Docker Container
 
-`docker build -f env/Dockerfile .`
+`docker build -f env/2014.Dockerfile .`
 
 ### Building
 
@@ -28,11 +28,15 @@ unless you are using a Ramdisk.
 
 Here I use the `-v` tag so I can avoid `docker cp`.
 
-2. Clone the repo
+2. Get the source code
+
+v2.7.0 for example:
 
 ```shell
 cd /root/tf/or/your/working/dir
-git clone https://github.com/tensorflow/tensorflow
+wget https://github.com/tensorflow/tensorflow/archive/refs/tags/v2.7.0.tar.gz
+tar -xzf v2.7.0.tar.gz
+# rm v2.7.0.tar.gz
 ```
 
 Skip this if you have already done cloning.
@@ -104,3 +108,12 @@ BAZEL_LINKLIBS=-l%:libstdc++.a bazel build --config=noaws --config=nogcp --confi
 ```shell
 /opt/python/cp39-cp39/bin/python3 /opt/_internal/tools/bin/auditwheel repair /root/tf/whl/py39/tensorflow-2.4.1-cp39-cp39-linux_aarch64.whl -w /root/tf/ml/whl/
 ```
+
+### Troubleshooting
+
+#### `/usr/bin/python`
+
+If you see `Must be invoked with a python 3 interpreter but was /usr/bin/python`,
+it is caused by a bug in `llvm`. 
+
+Try symlink it: `ln -s /opt/python/cp39-cp39/bin/python3.9`

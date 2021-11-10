@@ -1,6 +1,7 @@
 # tensorflow-aarch64
 
-[![Build Status][11]][12] [![Coverage][5]][3] [![manlinux][6]][10] 
+[![Build Status][11]][12] [![ver][15]][3]
+[![Coverage][5]][3]
 
 [TensorFlow][1] wheels (whl) and docker images
 for `aarch64` / ARMv8 / ARM64
@@ -12,7 +13,7 @@ for `aarch64` / ARMv8 / ARM64
 **`pip install tensorflow -f https://tf.kmtea.eu/whl/stable.html`**
 
 To use linaro's build,
-change `tensorflow` to `tensorflow-aarch64` for newer versions,
+replace `tensorflow` with `tensorflow-aarch64` for newer versions (v2.6.0 and later),
 and `tensorflow-cpu` for older versions.
 
 Backup link: `pip install tensorflow -f https://cf.tf.kmtea.eu/whl/stable.html`
@@ -45,7 +46,7 @@ which might be more stable.
 
 You can still fetch the archived wheels [here](whl/archive.html).
 
-### `RuntimeError`
+### `RuntimeError` (v2.4)
 
 If you see `RuntimeError: module compiled against API version 0xe but this version of numpy is 0xd`,
 it is because `tensorflow` requires `numpy~=1.19.2` but I built it using `numpy~=1.20.2`.
@@ -75,7 +76,7 @@ you could fetch them [here][9].
 [2]: https://github.com/KumaTea/ext-whl
 [3]: https://github.com/KumaTea/tensorflow-aarch64/releases
 [4]: https://hub.docker.com/r/kumatea/tensorflow
-[5]: https://shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8%20%7C%203.9-blue
+[5]: https://shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-blue
 [6]: https://shields.io/badge/manylinux-2014-blue
 [7]: https://github.com/KumaTea/tensorflow-aarch64
 [8]: https://tf.kmtea.eu
@@ -85,3 +86,4 @@ you could fetch them [here][9].
 [12]: https://circleci.com/gh/KumaTea/tensorflow-aarch64
 [13]: https://github.com/tensorflow/tensorflow/issues/49209
 [14]: https://github.com/KumaTea/pytorch-aarch64
+[15]: https://shields.io/badge/ver-2.7.0-brightgreen
