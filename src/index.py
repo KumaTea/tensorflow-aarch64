@@ -1,3 +1,4 @@
+import sys
 import lxml
 import requests
 from bs4 import BeautifulSoup
@@ -11,6 +12,7 @@ rl_file = 'stable.html'
 project = 'tensorflow-aarch64'
 linaro_root = 'https://snapshots.linaro.org'
 linaro_snapshots = 'https://snapshots.linaro.org/ldcg/python/tensorflow-manylinux/'
+linaro_dependencies = 'https://snapshots.linaro.org/ldcg/python/tensorflow-io-manylinux/'
 gh_rl_api = 'https://api.github.com/repos/{author}/{project}/releases'
 
 
@@ -22,6 +24,7 @@ def get_gh_rl(author_name, project_name):
         if release['assets']:
             for binary in release['assets']:
                 if 'whl' in binary['name']:
+                    sys.stdout.write('\r' + '  Get binary' + binary['name'])
                     assets.append({
                         'name': binary['name'],
                         'url': binary['browser_download_url']
@@ -29,33 +32,35 @@ def get_gh_rl(author_name, project_name):
     return assets
 
 
-def get_linaro_release():
+def get_linaro_release(url):
     wheels_list = []
     versions = {}
-    versions_page = requests.get(linaro_snapshots)
+    versions_page = requests.get(url)
     versions_soup = BeautifulSoup(versions_page.text, features="lxml")
     for a_tag in versions_soup.findAll('a'):
-        if 'tensorflow' in a_tag['href'] and 'latest' not in a_tag.text:
+        if 'tensorflow' in a_tag['href'] and a_tag.text.isnumeric():
             versions[a_tag.text] = linaro_root + a_tag['href']
-            print('Get version', a_tag.text)
+            sys.stdout.write('\r' + 'Get version' + a_tag.text)
 
     for version in versions:
+        print(f'\n\nVersion: {version}\n')
         projects = {}
         projects_page = requests.get(versions[version])
         projects_soup = BeautifulSoup(projects_page.text, features="lxml")
         for a_tag in projects_soup.findAll('a'):
-            if 'tensorflow' in a_tag['href'] and version in a_tag['href']:
+            if 'tensorflow' in a_tag['href'] and version in a_tag['href'] \
+                    and '.whl' not in a_tag.text and 'Parent Directory' not in a_tag.text:
                 projects[a_tag.text] = linaro_root + a_tag['href']
-                print('  Get project', a_tag.text)
+                sys.stdout.write('\r' + '  Get project' + a_tag.text)
 
         for proj in projects:
             wheels = {}
             wheels_page = requests.get(projects[proj])
             wheels_soup = BeautifulSoup(wheels_page.text, features="lxml")
             for a_tag in wheels_soup.findAll('a'):
-                if proj in a_tag['href']:
+                if proj in a_tag['href'] and 'Parent Directory' not in a_tag.text:
                     wheels[a_tag.text] = linaro_root + a_tag['href']
-                    print('    Get wheel', a_tag.text)
+                    sys.stdout.write('\r' + '    Get wheel' + a_tag.text)
 
             for wheel in wheels:
                 wheels_list.append({
@@ -76,7 +81,9 @@ def gen_index():
         gh_html += whl_index
     html += gh_html
 
-    l_list = get_linaro_release()
+    l_s_list = get_linaro_release(linaro_snapshots)
+    l_d_list = get_linaro_release(linaro_dependencies)
+    l_list = l_s_list + l_d_list
     l_html = ''
     l_wheels = []
     for file in l_list:
