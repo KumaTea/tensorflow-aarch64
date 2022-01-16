@@ -1,0 +1,63 @@
+{% set name = "tensorflow" %}
+{% set version = "FORMAT_TF_VERSION" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  path: ../../whl
+
+requirements:
+  host:
+    - python=FORMAT_PYTHON_VERSION
+    - setuptools
+    - keras-preprocessing >=1.1.2
+
+  run:
+    - python FORMAT_PYTHON_RANGE
+    - absl-py >=0.10,<1
+    - astunparse >=1.6.3
+    - flatbuffers <3.0,>=1.12
+    - gast <0.5.0,>=0.2.1
+    - google-pasta >=0.2,<1
+    - grpcio 1.42.*
+    - h5py >=3.1.0
+    - keras-preprocessing >=1.1.2
+    - keras <2.8,>=2.7.0rc0
+    - libclang >=9.0.1
+    - numpy >=1.19.2
+    - opt_einsum >=3.3
+    - protobuf >=3.9.2
+    - six >=1.15
+    - tensorboard >=2.6
+    - termcolor >=1.1.0
+    - typing-extensions >=3.7.4
+    - wheel >=0.35,<1
+    - wrapt >=1.12.1
+#     - tensorflow-estimator <2.8,~=2.7.0rc0
+
+test:
+  imports:
+    - tensorflow
+
+about:
+  description: 'TensorFlow provides multiple APIs.The lowest level API, TensorFlow
+    Core
+
+    provides you with complete programming control.
+
+    Base package contains only tensorflow, not tensorflow-tensorboard.
+
+    '
+  dev_url: https://github.com/tensorflow/tensorflow
+  doc_source_url: https://github.com/tensorflow/tensorflow/tree/master/tensorflow/docs_src
+  doc_url: https://www.tensorflow.org/get_started/get_started
+  home: http://tensorflow.org/
+  license: Apache-2.0
+  license_family: Apache
+  license_file: LICENSE
+  summary: TensorFlow is an open source machine learning framework for everyone.
+extra:
+  feedstock-name: tensorflow
+  final: true

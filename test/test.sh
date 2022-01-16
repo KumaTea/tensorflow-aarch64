@@ -25,11 +25,6 @@ PKGS="tensorflow"
 
 $PYVER -m pip install -Uq pip setuptools wheel
 $PYVER -m pip install cffi dataclasses future numpy pillow pyyaml requests six typing_extensions tqdm -f https://ext.kmtea.eu/whl/stable.html
-
-if [ "$PYVER" = "python3.10" ]; then
-  H5PY_SETUP_REQUIRES=0 $PYVER -m pip install h5py --no-deps --no-build-isolation
-fi
-
 $PYVER -m pip install -U $PKGS -f https://tf.kmtea.eu/whl/stable.html -f https://ext.kmtea.eu/whl/stable.html
 
 $PYVER test/tf-test.py

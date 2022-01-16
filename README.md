@@ -20,14 +20,6 @@ Backup link: `pip install tensorflow -f https://cf.tf.kmtea.eu/whl/stable.html`
 
 To pick the `whl` files manually, please check the **[releases][3]**.
 
-## [Docker][4]
-
-**`docker run -it kumatea/tensorflow`**
-
-To pull the image, run `docker pull kumatea/tensorflow`.
-
-To check all available tags, [click here][4].
-
 ---
 
 ## Build
