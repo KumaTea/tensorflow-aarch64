@@ -40,8 +40,13 @@ def generate_tensorflow_meta(py_ver, tf_version, tf_dir):
     minor_version = python_version[1:]
     python_version = f'{major_version}.{minor_version}'
     python_version_range = get_version_range(major_version, minor_version)
+    tf_version_range = get_version_range(
+        tf_version.split('.')[0],
+        tf_version.split('.')[1]
+    )
 
     meta = meta.replace('FORMAT_TF_VERSION', tf_version)
+    meta = meta.replace('FORMAT_TF_RANGE', tf_version_range)
     meta = meta.replace('FORMAT_PYTHON_VERSION', python_version)
     meta = meta.replace('FORMAT_PYTHON_RANGE', python_version_range)
 
@@ -63,7 +68,7 @@ def generate_manifest(python_version, tf_version, tf_license):
     # build.sh
     with open(os.path.join(tf_dir, 'build.sh'), 'w') as f:
         f.write(
-            f'$PYTHON -m pip install torch-{tf_version}-{abis[python_version]}-linux_aarch64.whl -f https://tf.kmtea.eu/whl/stable.html'
+            f'$PYTHON -m pip install tensorflow-{tf_version}-{abis[python_version]}-linux_aarch64.whl -f https://tf.kmtea.eu/whl/stable.html'
         )
 
     # LICENSE
