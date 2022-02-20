@@ -24,7 +24,7 @@ def get_gh_rl(author_name, project_name):
         if release['assets']:
             for binary in release['assets']:
                 if 'whl' in binary['name']:
-                    sys.stdout.write('\r' + '  Get binary' + binary['name'])
+                    sys.stdout.write('\r' + '  Get binary: ' + binary['name'])
                     assets.append({
                         'name': binary['name'],
                         'url': binary['browser_download_url']
@@ -40,10 +40,10 @@ def get_linaro_release(url):
     for a_tag in versions_soup.findAll('a'):
         if 'tensorflow' in a_tag['href'] and a_tag.text.isnumeric():
             versions[a_tag.text] = linaro_root + a_tag['href']
-            sys.stdout.write('\r' + 'Get version' + a_tag.text)
+            sys.stdout.write('\r' + 'Get version: ' + a_tag.text)
 
     for version in versions:
-        print(f'\n\nVersion: {version}\n')
+        print(f'\n\nVersion: {version}')
         projects = {}
         projects_page = requests.get(versions[version])
         projects_soup = BeautifulSoup(projects_page.text, features="lxml")
@@ -51,7 +51,7 @@ def get_linaro_release(url):
             if 'tensorflow' in a_tag['href'] and version in a_tag['href'] \
                     and '.whl' not in a_tag.text and 'Parent Directory' not in a_tag.text:
                 projects[a_tag.text] = linaro_root + a_tag['href']
-                sys.stdout.write('\r' + '  Get project' + a_tag.text)
+                sys.stdout.write('\r' + '  Get project: ' + a_tag.text)
 
         for proj in projects:
             wheels = {}
@@ -60,7 +60,7 @@ def get_linaro_release(url):
             for a_tag in wheels_soup.findAll('a'):
                 if proj in a_tag['href'] and 'Parent Directory' not in a_tag.text:
                     wheels[a_tag.text] = linaro_root + a_tag['href']
-                    sys.stdout.write('\r' + '    Get wheel' + a_tag.text)
+                    sys.stdout.write('\r' + '    Get wheel: ' + a_tag.text)
 
             for wheel in wheels:
                 wheels_list.append({
