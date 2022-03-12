@@ -72,7 +72,7 @@ def get_linaro_release(url):
 
 
 def gen_index():
-    html = ''
+    html = '<!DOCTYPE html>\n'
 
     gh_list = get_gh_rl(author, project)
     gh_html = ''

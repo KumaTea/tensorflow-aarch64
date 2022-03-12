@@ -10,13 +10,11 @@ for `aarch64` / ARMv8 / ARM64
 
 ## Install
 
-**`pip install tensorflow -f https://tf.kmtea.eu/whl/stable.html`**
+**`pip install tensorflow-aarch64 -f https://tf.kmtea.eu/whl/stable.html`**
 
-To use linaro's build,
-replace `tensorflow` with `tensorflow-aarch64` for newer versions (v2.6.0 and later),
-and `tensorflow-cpu` for older versions.
+Replace `tensorflow-aarch64` to `tensorflow-cpu` for older versions.
 
-Backup link: `pip install tensorflow -f https://cf.tf.kmtea.eu/whl/stable.html`
+Backup link: `pip install tensorflow-aarch64 -f https://cf.tf.kmtea.eu/whl/stable.html`
 
 To pick the `whl` files manually, please check the **[releases][3]**.
 
@@ -29,21 +27,6 @@ Please check the [tutorial](build).
 ---
 
 ## More Info
-
-### Note on v2.5.0
-
-Custom build on v2.5.0 [always failed][13],
-so this version has switched to [linaro's build][9],
-which might be more stable.
-
-You can still fetch the archived wheels [here](whl/archive.html).
-
-### `RuntimeError` (v2.4)
-
-If you see `RuntimeError: module compiled against API version 0xe but this version of numpy is 0xd`,
-it is because `tensorflow` requires `numpy~=1.19.2` but I built it using `numpy~=1.20.2`.
-
-You may try `pip install -U numpy`.
 
 ### Building Environment
 
@@ -61,7 +44,7 @@ You may try `pip install -U numpy`.
 
 ### Linaro's wheels
 
-There are official wheels for Python 3.6 - 3.9,
+There are official wheels for Python 3.6 - 3.10,
 you could fetch them [here][9].
 
 [1]: https://github.com/tensorflow/tensorflow
@@ -78,4 +61,4 @@ you could fetch them [here][9].
 [12]: https://circleci.com/gh/KumaTea/tensorflow-aarch64
 [13]: https://github.com/tensorflow/tensorflow/issues/49209
 [14]: https://github.com/KumaTea/pytorch-aarch64
-[15]: https://shields.io/badge/ver-2.7.0-brightgreen
+[15]: https://shields.io/badge/ver-2.8.0-brightgreen

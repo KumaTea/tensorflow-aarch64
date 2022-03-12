@@ -21,11 +21,15 @@ sudo apt install -y -qq pkg-config libhdf5-103 libhdf5-dev  # h5py
 
 bash test/check-arch.sh
 
-PKGS="tensorflow"
+PKGS="tensorflow-aarch64"
 
 $PYVER -m pip install -Uq pip setuptools wheel
 $PYVER -m pip install cffi dataclasses future numpy pillow pyyaml requests six typing_extensions tqdm -f https://ext.kmtea.eu/whl/stable.html
-$PYVER -m pip install -U $PKGS -f https://tf.kmtea.eu/whl/stable.html -f https://ext.kmtea.eu/whl/stable.html
+if [ "$PYVER" = "python3.6" ]; then
+  $PYVER -m pip install -U "tensorflow<=2.8.0a0" -f https://tf.kmtea.eu/whl/stable.html -f https://ext.kmtea.eu/whl/stable.html
+else
+  $PYVER -m pip install -U $PKGS -f https://tf.kmtea.eu/whl/stable.html -f https://ext.kmtea.eu/whl/stable.html
+fi
 
 $PYVER test/tf-test.py
 
