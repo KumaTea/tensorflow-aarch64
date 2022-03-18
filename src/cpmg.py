@@ -5,7 +5,7 @@ import shutil
 import requests
 
 
-tensorflow = '2.7.0'
+tensorflow = '2.8.0'
 
 abis = {
     'py36': 'cp36-cp36m',
@@ -68,7 +68,11 @@ def generate_manifest(python_version, tf_version, tf_license):
     # build.sh
     with open(os.path.join(tf_dir, 'build.sh'), 'w') as f:
         f.write(
-            f'$PYTHON -m pip install tensorflow-{tf_version}-{abis[python_version]}-linux_aarch64.whl -f https://tf.kmtea.eu/whl/stable.html'
+            f'$PYTHON -m '
+            f'pip install tensorflow_aarch64-'
+            f'{tf_version}-{abis[python_version]}-'
+            f'manylinux_2_17_aarch64.manylinux2014_aarch64.whl '
+            f'-f https://tf.kmtea.eu/whl/stable.html'
         )
 
     # LICENSE
