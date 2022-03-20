@@ -10,6 +10,12 @@ for `aarch64` / ARMv8 / ARM64
 
 ## Install
 
+### [conda][16] 🆕 (Experimental)
+
+**`conda install -c kumatea tensorflow`**
+
+### pip
+
 **`pip install tensorflow-aarch64 -f https://tf.kmtea.eu/whl/stable.html`**
 
 Replace `tensorflow-aarch64` to `tensorflow-cpu` for older versions.
@@ -51,7 +57,7 @@ you could fetch them [here][9].
 [2]: https://github.com/KumaTea/ext-whl
 [3]: https://github.com/KumaTea/tensorflow-aarch64/releases
 [4]: https://hub.docker.com/r/kumatea/tensorflow
-[5]: https://shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-blue
+[5]: https://shields.io/badge/python-3.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-blue
 [6]: https://shields.io/badge/manylinux-2014-blue
 [7]: https://github.com/KumaTea/tensorflow-aarch64
 [8]: https://tf.kmtea.eu
@@ -62,3 +68,4 @@ you could fetch them [here][9].
 [13]: https://github.com/tensorflow/tensorflow/issues/49209
 [14]: https://github.com/KumaTea/pytorch-aarch64
 [15]: https://shields.io/badge/ver-2.8.0-brightgreen
+[16]: https://anaconda.org/KumaTea/tensorflow

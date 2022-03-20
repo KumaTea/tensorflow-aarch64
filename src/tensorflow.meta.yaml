@@ -17,7 +17,7 @@ requirements:
     - python FORMAT_PYTHON_RANGE
     - absl-py >=0.4.0
     - astunparse >=1.6.0
-    - flatbuffers >=1.12
+    # - flatbuffers >=1.12
     - gast >=0.2.1,<0.5.0
     # - giflib >=5.2.1,<5.3.0a0
     - google-pasta >=0.1.1
@@ -30,7 +30,7 @@ requirements:
     - keras-preprocessing >=1.1.1
     - libclang >=9.0.1
     # - libcurl >=7.81.0,<8.0a0
-    # - libgcc-ng >=9.4.0
+    - libgcc-ng >=9.4.0
     # - libpng >=1.6.37,<1.7.0a0
     # - libprotobuf >=3.19.4,<3.20.0a0
     # - libstdcxx-ng >=9.4.0
@@ -39,12 +39,12 @@ requirements:
     # - openssl >=1.1.1l,<1.1.2a
     - opt_einsum >=2.3.2
     - protobuf >=3.9.2
-    # - python-flatbuffers >=1.12,<3
+    - python-flatbuffers >=1.12,<3
     - setuptools
     - six >=1.12
     # - snappy >=1.1.8,<2.0a0
     # - sqlite >=3.37.0,<4.0a0
-    - tensorboard FORMAT_TF_RANGE
+    # - tensorboard FORMAT_TF_RANGE
     # - tensorflow-estimator FORMAT_TF_RANGE
     # - tensorflow-io-gcs-filesystem >=0.23.1
     - termcolor >=1.1.0
