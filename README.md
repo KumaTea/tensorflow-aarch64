@@ -10,15 +10,9 @@ for `aarch64` / ARMv8 / ARM64
 
 ## Install
 
-### [conda][16] 🆕 (Experimental)
-
-**`conda install -c kumatea tensorflow`**
-
 ### pip
 
 **`pip install tensorflow-aarch64 -f https://tf.kmtea.eu/whl/stable.html`**
-
-Replace `tensorflow-aarch64` to `tensorflow-cpu` for older versions.
 
 Backup link: `pip install tensorflow-aarch64 -f https://cf.tf.kmtea.eu/whl/stable.html`
 
@@ -27,6 +21,8 @@ To pick the `whl` files manually, please check the **[releases][3]**.
 ---
 
 ## Build
+
+> Outdated & WIP
 
 Please check the [tutorial](build).
 
@@ -50,7 +46,7 @@ Please check the [tutorial](build).
 
 ### Linaro's wheels
 
-There are official wheels for Python 3.6 - 3.10,
+There are official wheels for Python ~~3.6~~ 3.7 - 3.10,
 you could fetch them [here][9].
 
 [1]: https://github.com/tensorflow/tensorflow
@@ -67,5 +63,5 @@ you could fetch them [here][9].
 [12]: https://circleci.com/gh/KumaTea/tensorflow-aarch64
 [13]: https://github.com/tensorflow/tensorflow/issues/49209
 [14]: https://github.com/KumaTea/pytorch-aarch64
-[15]: https://shields.io/badge/ver-2.8.0-brightgreen
+[15]: https://shields.io/badge/ver-2.10-brightgreen
 [16]: https://anaconda.org/KumaTea/tensorflow
