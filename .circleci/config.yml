@@ -3,68 +3,55 @@ version: 2.1
 jobs:
   py310:
     machine:
-      image: ubuntu-2004:202111-02
+      image: ubuntu-2004:current
     resource_class: arm.medium
     steps:
       - run: |
           git clone https://github.com/KumaTea/tensorflow-aarch64
           cd tensorflow-aarch64
-          bash test/test-conda.sh 3.10
+          bash test/test.sh 3.10
 
       - store_artifacts:
           path: /tmp/artifacts
 
   py39:
     machine:
-      image: ubuntu-2004:202111-02
+      image: ubuntu-2004:current
     resource_class: arm.medium
     steps:
       - run: |
           git clone https://github.com/KumaTea/tensorflow-aarch64
           cd tensorflow-aarch64
-          bash test/test-conda.sh 3.9
+          bash test/test.sh 3.9
 
       - store_artifacts:
           path: /tmp/artifacts
 
   py38:
     machine:
-      image: ubuntu-2004:202111-02
+      image: ubuntu-2004:current
     resource_class: arm.medium
     steps:
       - run: |
           git clone https://github.com/KumaTea/tensorflow-aarch64
           cd tensorflow-aarch64
-          bash test/test-conda.sh 3.8
+          bash test/test.sh 3.8
 
       - store_artifacts:
           path: /tmp/artifacts
 
   py37:
     machine:
-      image: ubuntu-2004:202111-02
+      image: ubuntu-2004:current
     resource_class: arm.medium
     steps:
       - run: |
           git clone https://github.com/KumaTea/tensorflow-aarch64
           cd tensorflow-aarch64
-          bash test/test-conda.sh 3.7
+          bash test/test.sh 3.7
 
       - store_artifacts:
           path: /tmp/artifacts
-
-#  py36:
-#    machine:
-#      image: ubuntu-2004:202111-02
-#    resource_class: arm.medium
-#    steps:
-#      - run: |
-#          git clone https://github.com/KumaTea/tensorflow-aarch64
-#          cd tensorflow-aarch64
-#          bash test/test-conda.sh 3.6
-#
-#      - store_artifacts:
-#          path: /tmp/artifacts
 
 workflows:
   build:
