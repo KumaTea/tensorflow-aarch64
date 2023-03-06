@@ -1,5 +1,13 @@
 # tensorflow-aarch64
 
+## Deprecation
+
+Since [v 2.9.0, TensorFlow has officially provided][17] `aarch64` wheels.
+
+This project has completed its mission.
+
+---
+
 [![Build Status][11]][12] [![ver][15]][3]
 [![Coverage][5]][3]
 
@@ -65,3 +73,4 @@ you could fetch them [here][9].
 [14]: https://github.com/KumaTea/pytorch-aarch64
 [15]: https://shields.io/badge/ver-2.10-brightgreen
 [16]: https://anaconda.org/KumaTea/tensorflow
+[17]: https://pypi.org/project/tensorflow/2.10.0/#files
